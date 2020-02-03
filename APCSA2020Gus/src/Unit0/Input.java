@@ -52,6 +52,8 @@ public class Input
 
 		System.out.print("Enter a short: ");
 		shortTwo = keyboard.nextShort();
+		
+		System.out.print("Thanks");
 
 		
 		//add in input for all variables
@@ -69,7 +71,6 @@ public class Input
 		System.out.println();
 		System.out.println("short one = " + shortOne );
 		System.out.println("short two = " + shortTwo );
-		System.out.println();
 
 		//add in output for all variables
 }
