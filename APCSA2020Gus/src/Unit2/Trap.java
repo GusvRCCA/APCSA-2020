@@ -1,5 +1,5 @@
 package Unit2;
-//© A+ Computer Science  -  www.apluscompsci.com
+//ï¿½ A+ Computer Science  -  www.apluscompsci.com
 //Name -
 //Date -
 //Class -
@@ -9,6 +9,7 @@ public class Trap
 {
 	public static double area( int base1, int base2, int height )
 	{
-		return 0;
+		double trapArea = (double)(base1+base2)*height/2;
+		return trapArea;
 	}
 }
