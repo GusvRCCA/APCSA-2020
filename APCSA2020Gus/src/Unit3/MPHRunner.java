@@ -32,7 +32,7 @@ public class MPHRunner
 		MilesPerHour trip1 = new MilesPerHour(dist, hrs, mins);
 		trip1.calcMPH();
 		System.out.println(trip1);
-		
+		 
 		
 		//add more test cases
 		out.print("\n\nEnter the distance :: ");
