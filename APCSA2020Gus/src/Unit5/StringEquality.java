@@ -15,18 +15,24 @@ public class StringEquality
 
 	public StringEquality()
 	{
+		setWords("hello", "goodbye");
 	}
 
 	public StringEquality(String one, String two)
 	{
+		setWords(one, two);
 	}
 
 	public void setWords(String one, String two)
 	{
+		wordOne = one;
+		wordTwo = two;
 	}
 
 	public boolean checkEquality( )
 	{
+		if(wordOne.equals(wordTwo))
+		return true;
 		return false;
 	}
 
