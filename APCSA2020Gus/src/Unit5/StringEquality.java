@@ -38,6 +38,9 @@ public class StringEquality
 
 	public String toString()
 	{
+		if(checkEquality())
+		return wordOne + " has the same letters as " + wordTwo + "\n";
 		return wordOne + " does not have the same letters as " + wordTwo + "\n";
+
 	}
 }
