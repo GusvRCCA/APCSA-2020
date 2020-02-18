@@ -35,7 +35,7 @@ public class Review {
   
   //read in the positive adjectives in postiveAdjectives.txt
      try {
-      Scanner input = new Scanner(new File("\"src/ConsumerLab/positiveAdjectives.txt"));
+      Scanner input = new Scanner(new File("src/ConsumerLab/positiveAdjectives.txt"));
       while(input.hasNextLine()){
         String temp = input.nextLine().trim();
         System.out.println(temp);
@@ -49,7 +49,7 @@ public class Review {
  
   //read in the negative adjectives in negativeAdjectives.txt
      try {
-      Scanner input = new Scanner(new File("\"src/ConsumerLab/negativeAdjectives.txt"));
+      Scanner input = new Scanner(new File("src/ConsumerLab/negativeAdjectives.txt"));
       while(input.hasNextLine()){
         negAdjectives.add(input.nextLine().trim());
       }
@@ -97,7 +97,9 @@ public class Review {
     {
       return 0;
     }
-  }
+  }//end sentimentVal
+  
+  
   
   /**
    * Returns the ending punctuation of a string, or the empty string if there is none 
@@ -155,7 +157,7 @@ public class Review {
     // read in the file contents into a string using the textToString method with the filename
 
     // set up a sentimentTotal variable
-
+	  double sentimentTotal = 0;
     // loop through the file contents 
 
        // find each word
@@ -178,7 +180,7 @@ public class Review {
     // call the totalSentiment method with the fileName
 
     // determine number of stars between 0 and 4 based on totalSentiment value 
-    int stars;
+    int stars = 0;
     // write if statements here
 
 
