@@ -155,11 +155,11 @@ public class Review {
   public static double totalSentiment(String filename)
   {
     // read in the file contents into a string using the textToString method with the filename
-
+	  String rev = textToString(filename);
     // set up a sentimentTotal variable
 	  double sentimentTotal = 0;
     // loop through the file contents 
-
+for ()
        // find each word
        // add in its sentimentVal
        // set the file contents to start after this word
