@@ -159,7 +159,9 @@ public class Review {
     // set up a sentimentTotal variable
 	  double sentimentTotal = 0;
     // loop through the file contents 
-for ()
+for (int i = 0; i<rev.length(); i++){
+	
+}
        // find each word
        // add in its sentimentVal
        // set the file contents to start after this word

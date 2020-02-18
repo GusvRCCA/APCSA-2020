@@ -9,6 +9,19 @@ public class TriangleOneRunner
 {
 	public static void main ( String[] args )
 	{
-		//add test cases		
+		TriangleOne w = new TriangleOne();
+		w.print();
+		//add test cases
+		w.setWord("abcd");
+		w.print();
+		
+		w.setWord("it");
+		w.print();
+		
+		w.setWord("a");
+		w.print();
+		
+		w.setWord("chicken");
+		w.print();
 	}
 }
