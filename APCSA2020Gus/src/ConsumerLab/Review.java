@@ -156,18 +156,21 @@ public class Review {
   {
     // read in the file contents into a string using the textToString method with the filename
 	  String rev = textToString(filename);
+	  System.out.println(rev);
     // set up a sentimentTotal variable
 	  double sentimentTotal = 0;
     // loop through the file contents 
-for (int i = 0; i<rev.length(); i++){
-	
-}
+
        // find each word
+String[] words = rev.split(" ");
+for(String w:words){
+	sentimentTotal+=sentimentVal(w);
+}
+
+
        // add in its sentimentVal
        // set the file contents to start after this word
    
-   
-
 
 
    return sentimentTotal; 

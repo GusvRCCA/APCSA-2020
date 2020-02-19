@@ -14,11 +14,11 @@ class Main {
 		System.out.println(Review.sentimentVal("goods"));
 		System.out.println(Review.sentimentVal("cool"));
 		System.out.println(Review.sentimentVal("crazy"));
+		System.out.println(Review.totalSentiment("src/ConsumerLab/simpleReview.txt"));
 	try {
 	Scanner input = new Scanner(new File("src/ConsumerLab/simpleReview.txt"));
 	while(input.hasNextLine()){
 	String temp = input.nextLine().trim();
-	System.out.println(temp);
 
 	}
 	input.close();
