@@ -5,11 +5,9 @@ package Unit7;
 
 import static java.lang.System.*;
 
-public class LetterRemoverRunner
+public class TriangleFiveRunner
 {
-	public static void main( String args[] )
-	{
-		//add test cases		
-											
+   public static void main(String args[])
+   {
 	}
 }
