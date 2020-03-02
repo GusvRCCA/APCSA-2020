@@ -11,6 +11,18 @@ public class ListSumFirst
 {
 	public static int go(List<Integer> ray)
 	{
-		return 0;
+		if(ray.size()<2)
+			return -1;
+		int first = ray.get(0);
+		boolean nums = false;
+		int sum = 0;
+		for(int num:ray)
+			if(num>first){
+				sum+=num;
+				nums = true;
+			}
+		if(nums)
+			return sum;
+		return -1;
 	}
 }
