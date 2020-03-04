@@ -45,11 +45,11 @@ public String getRank() {
 	return rank;
 }
 
-public int getFaceVal() {
+public int getFace() {
 	return face;
 }
 
-public int getPointVal() {
+public int getPoint() {
 	return points;
 }
 
@@ -61,11 +61,11 @@ public void setRank(String cardRank) {
 	this.rank=cardRank;
 }
 
-public void setFaceVal(int faceVal) {
+public void setFace(int faceVal) {
 	this.face=faceVal;
 }
 
-public void setPointVal(int pointVal) {
+public void setPoint(int pointVal) {
 	this.points=pointVal;
 }
 
