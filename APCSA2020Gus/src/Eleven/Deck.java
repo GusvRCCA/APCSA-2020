@@ -33,12 +33,10 @@ public class Deck{
 
 	}//end Deck
 	
-	public void nextTop(){
-		top--;
-	}
+	
    //make a dealCard() method that returns the top card
 	public Card dealCard(){
-		return cards.get(top);
+		return cards.get(top--);
 	}//end dealCard
    //write a shuffle() method
 	public void shuffle(){
