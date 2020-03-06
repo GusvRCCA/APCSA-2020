@@ -5,6 +5,7 @@ package Eleven;
 
 public class BlackJackCard extends Card
 {
+	private int face;
   	//constructors
   	public BlackJackCard( String s, int f)
   	{
@@ -12,6 +13,9 @@ public class BlackJackCard extends Card
   	}
 
   	//accessors
+  	public int getFace() {
+  		return face;
+  	}
 	public int getValue()
 	{
 		if( getFace() == 1 )

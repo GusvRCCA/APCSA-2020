@@ -32,7 +32,7 @@ public class Deck {
 	 */
 	public Deck(String[] ranks, String[] suits, int[] values) {
 		cards = new ArrayList<Card>();
-		for (int j = 1; j < ranks.length; j++) {
+		for (int j = 0; j < ranks.length; j++) {
 			for (String suitString : suits) {
 				cards.add(new Card(ranks[j], suitString, values[j]));
 			}
@@ -46,7 +46,7 @@ public class Deck {
 	 * @return true if this deck is empty, false otherwise.
 	 */
 	public boolean isEmpty() {
-		return size < 0;
+		return size < 1;
 	}
 
 	/**
@@ -79,7 +79,6 @@ public class Deck {
 	 *         previously dealt.
 	 */
 	public Card deal() {
-		size--;
 		if (isEmpty()) {
 			return null;
 		}
