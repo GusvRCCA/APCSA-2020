@@ -11,13 +11,14 @@ public class Doggies
 
 	public Doggies(int size)
 	{
-		//point pups at a new arry of Dog
-		
+		//point pups at a new array of Dog
+		pups = new Dog[size];
 	}
 	
 	public void set(int spot, int age, String name)
 	{
 		//put a new Dog in the array at spot 
+		pups[spot] = name;
 		//make sure spot is in bounds		
 	}
 
