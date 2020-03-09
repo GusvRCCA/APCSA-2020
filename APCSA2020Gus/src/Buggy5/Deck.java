@@ -82,7 +82,7 @@ public class Deck {
 		if (isEmpty()) {
 			return null;
 		}
-		Card c = cards.get(size);
+		Card c = cards.get(--size);
 		return c;
 	}
 
