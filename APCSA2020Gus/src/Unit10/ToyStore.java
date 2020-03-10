@@ -34,6 +34,7 @@ public class ToyStore
 					}
 				}
 				toyList.add(new Toy(allToys[i]));
+				toyList.get(toyList.size()-1).setName(allToys[i]);
 				toyList.get(toyList.size()-1).setCount(count);
 				out.println(toyList.get(toyList.size()-1).getName());
 				out.println(toyList.get(toyList.size()-1).getCount());
