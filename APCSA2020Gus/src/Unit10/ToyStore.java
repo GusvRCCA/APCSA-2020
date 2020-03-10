@@ -6,6 +6,7 @@ package Unit10;
 import java.util.Scanner;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import static java.lang.System.*;
 
@@ -21,6 +22,7 @@ public class ToyStore
 	{
 		toyList = new ArrayList<Toy>();
 		String [] allToys = toys.split(" ");
+		out.println(Arrays.toString(allToys));
 		int count = 0;
 		for(int i = 0; i<allToys.length; i++){
 			count = 0;
@@ -33,9 +35,11 @@ public class ToyStore
 				}
 				toyList.add(new Toy(allToys[i]));
 				toyList.get(toyList.size()-1).setCount(count);
+				out.println(toyList.get(toyList.size()-1).getName());
+				out.println(toyList.get(toyList.size()-1).getCount());
 			}
 		}
-		
+		out.println(Arrays.toString(allToys));
 	}
   
   	public Toy getThatToy( String nm )
