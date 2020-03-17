@@ -12,6 +12,13 @@ public class CelebrityRunner
 	 */
 	public static void main(String [] args)
 	{
+		Celebrity newCeleb = new Celebrity("Dwayne Johnson", "Rock");
+		System.out.println(newCeleb);
+		newCeleb.setAnswer("Kate Winslet");
+		System.out.println(newCeleb);
+		System.out.println("The clue is " + newCeleb.getClue() );
+		CelebrityGame game = new CelebrityGame();
+		game.play();
 
 	}
 }

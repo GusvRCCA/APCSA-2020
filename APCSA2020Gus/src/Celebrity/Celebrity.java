@@ -67,7 +67,7 @@ public class Celebrity
 	@Override
 	public String toString()
 	{
-		return name;
+		return clue +"\n"+ name;
 	}
 	
 }

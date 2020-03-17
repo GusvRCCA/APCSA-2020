@@ -47,11 +47,8 @@ public class LiteratureCelebrity extends Celebrity
 	public String getClue()
 	{
 		if (clueList.size() == 0)
-		{
 			processClues();
-		}
 		String currentClue = clueList.remove(0);
-		
 		return currentClue;
 	}
 	
@@ -62,10 +59,7 @@ public class LiteratureCelebrity extends Celebrity
 		String dsc = "This is the literature celebrity: " + getAnswer() + "\nThe clues are:\n";
 		
 		for (String word : super.getClue().split(","))
-		{
 			dsc += word + "\n";
-		}
-		
 		return dsc;
 	}
 

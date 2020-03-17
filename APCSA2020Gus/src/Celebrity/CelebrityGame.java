@@ -12,7 +12,7 @@ public class CelebrityGame
 	/**
 	 * A reference to a Celebrity or subclass instance.
 	 */
-Celebrity celeb = new Celebrity("harrison ford", "SOLO");
+
 	/**
 	 * The GUI frame for the Celebrity game.
 	 */
@@ -24,8 +24,17 @@ Celebrity celeb = new Celebrity("harrison ford", "SOLO");
 	/**
 	 * Builds the game and starts the GUI
 	 */
+	
+	private ArrayList<Celebrity> celebGameList;
+	
+	private Celebrity gameCelebrity;
+	
+	private CelebrityFrame gameWindow;
+	
 	public CelebrityGame()
 	{
+		celebGameList = new ArrayList<Celebrity>();
+		gameWindow = new CelebrityFrame(this);
 	}
 
 	/**
@@ -33,6 +42,8 @@ Celebrity celeb = new Celebrity("harrison ford", "SOLO");
 	 */
 	public void prepareGame()
 	{
+		celebGameList = new ArrayList<Celebrity>();
+		gameWindow.replaceScreen("START");
 	}
 
 	/**
@@ -45,6 +56,16 @@ Celebrity celeb = new Celebrity("harrison ford", "SOLO");
 	 */
 	public boolean processGuess(String guess)
 	{
+		if (guess.equalsIgnoreCase(gameCelebrity.getAnswer())) {
+			celebGameList.remove(0);
+			if(celebGameList.size() == 0) {
+				gameCelebrity = new Celebrity("", "");
+			} 
+			else {
+				gameCelebrity = celebGameList.get(0);
+			}
+			return true;
+		}
 		return false;
 	}
 
@@ -55,6 +76,11 @@ Celebrity celeb = new Celebrity("harrison ford", "SOLO");
 	 */
 	public void play()
 	{
+		if (celebGameList != null && celebGameList.size() > 0 )
+		{
+			this.gameCelebrity = celebGameList.get(0);
+			gameWindow.replaceScreen("GAME");
+		}
 		
 	}
 
@@ -70,7 +96,16 @@ Celebrity celeb = new Celebrity("harrison ford", "SOLO");
 	 */
 	public void addCelebrity(String name, String guess, String type)
 	{
-		
+		if (type.equals("Literature")) {
+			celebGameList.add(new LiteratureCelebrity(name,  guess ));
+		}
+		else if (type.equals("Dance")) {
+			celebGameList.add(new DanceCelebrity(name,  guess ));
+
+		}
+		else {
+			celebGameList.add(new Celebrity(name,  guess ));
+		}
 	}
 
 	/**
@@ -80,6 +115,9 @@ Celebrity celeb = new Celebrity("harrison ford", "SOLO");
 	 */
 	public boolean validateCelebrity(String name)
 	{
+		if (name.length() > 3 ) {
+			return true;
+		}
 		return false;
 	}
 
@@ -92,7 +130,37 @@ Celebrity celeb = new Celebrity("harrison ford", "SOLO");
 	 */
 	public boolean validateClue(String clue, String type)
 	{
-		return false;
+		boolean validClue = true;
+		if (clue.length() > 9) {
+			validClue = true;
+			if (type.equalsIgnoreCase("literature")){
+				String[] temp = clue.split(",");
+			
+				if (temp.length > 1){
+					validClue = true;
+				}
+			
+				else {
+					validClue = false;
+				}
+			}
+			else if (type.equalsIgnoreCase("dance")) {
+				String[] temp = clue.split(",");
+				
+				if (temp.length > 1){
+					validClue = true;
+				}
+			
+				else {
+					validClue = false;
+				}
+			}
+		}	
+		return validClue;
+		
+	
+		//You will need to add an else if condition here fo or your subclass
+		
 	}
 
 	/**
@@ -102,7 +170,7 @@ Celebrity celeb = new Celebrity("harrison ford", "SOLO");
 	 */
 	public int getCelebrityGameSize()
 	{
-		return 0;
+		return celebGameList.size();
 	}
 
 	/**
@@ -113,7 +181,7 @@ Celebrity celeb = new Celebrity("harrison ford", "SOLO");
 	 */
 	public String sendClue()
 	{
-		return null;
+		return gameCelebrity.getClue();
 	}
 
 	/**
