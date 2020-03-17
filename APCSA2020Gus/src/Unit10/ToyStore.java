@@ -14,33 +14,27 @@ public class ToyStore
 {
 	private ArrayList<Toy> toyList;
 
-	public ToyStore()
+	public ToyStore(String toys)
 	{
+		toyList = new ArrayList<Toy>();
+		loadToys(toys);
 	}
 
 	public void loadToys( String toys )
 	{
-		toyList = new ArrayList<Toy>();
-		String [] allToys = toys.split(" ");
-		out.println(Arrays.toString(allToys));
-		int count = 0;
-		for(int i = 0; i<allToys.length; i++){
-			count = 0;
-			if(!allToys[i].equals(" ")){
-				for(int t = i; t<allToys.length; t++){
-					if(allToys[i].equals(allToys[t])){
-						allToys[t] = " ";
-						count++;
-					}
-				}
-				toyList.add(new Toy(allToys[i]));
-				toyList.get(toyList.size()-1).setName(allToys[i]);
-				toyList.get(toyList.size()-1).setCount(count);
-				out.println(toyList.get(toyList.size()-1).getName());
-				out.println(toyList.get(toyList.size()-1).getCount());
+		Scanner scan = new Scanner(toys);
+		while(scan.hasNext())
+		{
+			String t = scan.next();
+			Toy that = getThatToy(t);
+			if(that == null) {
+				Toy n = new Toy(t);
+				toyList.add(n);
+			}
+			else{
+				that.setCount(that.getCount()+1);
 			}
 		}
-		out.println(Arrays.toString(allToys));
 	}
   
   	public Toy getThatToy( String nm )
