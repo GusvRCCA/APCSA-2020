@@ -3,6 +3,7 @@ package Unit13;
 //www.apluscompsci.com
 //Name -
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.io.File;
@@ -28,7 +29,6 @@ public class NumberShifterRunner
 		shift3.shiftEm();
 		System.out.println(shift3+"\n");
 
-		
 	}
 }
 
