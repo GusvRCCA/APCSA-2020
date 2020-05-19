@@ -54,9 +54,12 @@ public class ElevensBoard extends Board {
 	 */
 	@Override
 	public boolean isLegal(List<Integer> selectedCards) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
-		
-		return false;
+		boolean valid = false;
+		if(selectedCards.size() == 2)
+			valid = containsPairSum11(selectedCards);
+		else if(selectedCards.size() == 3)
+			valid = containsJQK(selectedCards);
+		return valid;
 	}
 
 	/**
@@ -69,9 +72,15 @@ public class ElevensBoard extends Board {
 	 */
 	@Override
 	public boolean anotherPlayIsPossible() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+		int size = size();
+		if(deckSize() <= size)
+			return true;
+		List<Integer> cards = new ArrayList<Integer>();
 		
-		return false;
+		for(int i = 0; i < size; i++)
+			cards.add(i);
+		
+		return containsPairSum11(cards) || containsJQK(cards);
 	}
 
 	/**
@@ -83,8 +92,12 @@ public class ElevensBoard extends Board {
 	 *              contain an 11-pair; false otherwise.
 	 */
 	private boolean containsPairSum11(List<Integer> selectedCards) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
-		
+		for(int i = 0; i < selectedCards.size(); i++) {
+			for(int j = 0; j < selectedCards.size(); j++) {
+				if(cardAt(selectedCards.get(i)).pointValue() + cardAt(selectedCards.get(j)).pointValue() == 11)
+					return true;
+			}
+		}
 		return false;
 	}
 
@@ -97,8 +110,39 @@ public class ElevensBoard extends Board {
 	 *              include a jack, a queen, and a king; false otherwise.
 	 */
 	private boolean containsJQK(List<Integer> selectedCards) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
-		
+		for(int i = 0; i < selectedCards.size(); i++) {
+			for(int j = 0; j < selectedCards.size(); j++) {
+				for(int y = 0; y < selectedCards.size(); y++) {
+					if(isJQK(cardAt(selectedCards.get(i)).rank(), cardAt(selectedCards.get(j)).rank(), cardAt(selectedCards.get(y)).rank())) {
+						return true;
+					}
+				}
+				
+			}
+		}
 		return false;
+	}
+	
+	private boolean isJQK(String x, String y, String z){
+		int count = 0;
+		String j = "jack";
+		String q = "queen";
+		String k = "king";
+		String[] inputs = {x, y, z};
+			for(String c:inputs){
+				if(c.equals(j)){
+					j = "";
+					count++;
+				}
+				else if(c.equals(q)){
+					q = "";
+					count++;
+				}
+				else if(c.equals(k)){
+					k = "";
+					count++;
+				}
+			}
+		return count==3;
 	}
 }
