@@ -28,9 +28,9 @@ public class Bullets
 	//post - draw each Ammo
 	public void drawEmAll( Graphics window )
 	{
-		for (int i=0; i<ammo.size(); i++)
+		for(Ammo am:ammo)
 		{
-			ammo.get(i).draw(window);
+			am.draw(window);
 		}
 	}
 
@@ -38,9 +38,9 @@ public class Bullets
 	{
 		if (ammo.size()>0)
 		{
-			for (int i=0; i<ammo.size(); i++)
+			for (Ammo am:ammo)
 			{
-				ammo.get(i).move("UP");
+				am.move("UP");
 			}
 		}
 		
